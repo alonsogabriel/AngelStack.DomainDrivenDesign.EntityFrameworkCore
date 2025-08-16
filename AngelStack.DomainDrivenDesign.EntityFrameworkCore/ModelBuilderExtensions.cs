@@ -1,4 +1,5 @@
 ﻿using AngelStack.DomainDrivenDesign.EntityFrameworkCore.Mappings;
+using DomainDrivenDesign.Abstractions.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore;

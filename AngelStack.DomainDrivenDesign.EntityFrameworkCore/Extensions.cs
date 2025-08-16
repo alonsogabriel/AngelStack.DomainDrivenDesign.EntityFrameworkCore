@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using System.Text.RegularExpressions;
 using AngelStack.DomainDrivenDesign.Abstractions;
 using AngelStack.DomainDrivenDesign.Abstractions.Extensions;
 
 namespace DomainDrivenDesign.Abstractions.EntityFrameworkCore;
 
-public static partial class Extensions
+public static class Extensions
 {
     public static PropertyBuilder<K> Property<T, K>(
         this EntityTypeBuilder<T> builder,
@@ -16,26 +15,6 @@ public static partial class Extensions
         where T : class
     {
         return builder.Property<K>(property).HasColumnName(columnName);
-    }
-
-    [GeneratedRegex(@"[A-Z]?[a-z0-9]+|[A-Z]+(?![a-z])", RegexOptions.Compiled)]
-    public static partial Regex PascalCaseRegex();
-
-    public static PropertyBuilder<K> SnakeCase<T, K>(
-        this EntityTypeBuilder<T> builder,
-        Expression<Func<T, K>> property)
-        where T : class
-    {
-        string? column = null;
-
-        if (property.Body is MemberExpression member)
-        {
-            var matches = PascalCaseRegex().Matches(member.Member.Name);
-            var parts = matches.Select(match => match.Value.ToLower());
-            column = string.Join('_', parts);
-        }
-
-        return builder.Property<K>(property).HasColumnName(column);
     }
 
     public static void MapBaseEntity<T, K>(

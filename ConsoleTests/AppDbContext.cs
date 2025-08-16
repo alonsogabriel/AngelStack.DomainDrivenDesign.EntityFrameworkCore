@@ -21,6 +21,6 @@ public class AppDbContext : DbContext
 
         var connectionString = "Server=localhost;Database=ddd_tests;User Id=sa;Password=sqlserver;Trusted_Connection=True;TrustServerCertificate=True";
 
-        optionsBuilder.UseSqlServer(connectionString);
+        optionsBuilder.UseSqlServer(connectionString).UseSnakeCaseNamingConvention();
     }
 }
