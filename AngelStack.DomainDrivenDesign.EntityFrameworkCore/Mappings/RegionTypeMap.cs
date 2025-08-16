@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore.Mappings;
 
-public class CountryMap : IEntityTypeConfiguration<Country>
+public class RegionTypeMap : IEntityTypeConfiguration<RegionType>
 {
-    public void Configure(EntityTypeBuilder<Country> builder)
+    public void Configure(EntityTypeBuilder<RegionType> builder)
     {
-        builder.MapBaseEntity<Country, int>();
+        builder.MapBaseEntity<RegionType, int>();
 
-        builder.MapStringValidatable(c => c.Name);
+        builder.MapStringValidatable(r => r.Name);
     }
 }

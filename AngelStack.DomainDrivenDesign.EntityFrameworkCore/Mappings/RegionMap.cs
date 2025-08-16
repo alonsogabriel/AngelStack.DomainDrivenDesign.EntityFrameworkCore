@@ -5,9 +5,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore.Mappings;
 
-public class RegionMap(TableNamingOptions? options = null) : IEntityTypeConfiguration<Region>
+public class RegionMap : IEntityTypeConfiguration<Region>
 {
-    public TableNamingOptions Options { get; } = options ?? new();
     public void Configure(EntityTypeBuilder<Region> builder)
     {
         builder.MapBaseEntity<Region, int>();
@@ -21,5 +20,9 @@ public class RegionMap(TableNamingOptions? options = null) : IEntityTypeConfigur
         builder.MapStringValidatable(r => r.Name);
 
         builder.MapStringValidatable(r => r.Alias);
+
+        // TODO remove and map cities
+        builder.Ignore(r => r.Cities);
+        builder.Ignore(r => r.AllCities);
     }
 }

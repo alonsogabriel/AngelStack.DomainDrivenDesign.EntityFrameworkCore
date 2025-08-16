@@ -5,13 +5,18 @@ namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore;
 
 public static class ModelBuilderExtensions
 {
-    public static void ConfigureCountry(this ModelBuilder builder, TableNamingOptions? options = null)
+    public static ModelBuilder ConfigureCountry(this ModelBuilder builder)
     {
-        builder.ApplyConfiguration(new CountryMap(options));
+        return builder.ApplyConfiguration(new CountryMap());
     }
 
-    public static void ConfigureRegion(this ModelBuilder builder, TableNamingOptions? options = null)
+    public static ModelBuilder ConfigureRegion(this ModelBuilder builder)
     {
-        builder.ApplyConfiguration(new RegionMap(options));
+        return builder.ApplyConfiguration(new RegionMap());
+    }
+
+    public static ModelBuilder ConfigureRegionType(this ModelBuilder builder)
+    {
+        return builder.ApplyConfiguration(new RegionTypeMap());
     }
 }
