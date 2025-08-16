@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using AngelStack.DomainDrivenDesign.Abstractions;
+using AngelStack.DomainDrivenDesign.Abstractions.Extensions;
 
 namespace DomainDrivenDesign.Abstractions.EntityFrameworkCore;
 
@@ -124,5 +125,55 @@ public static partial class Extensions
         this ReferenceCollectionBuilder<T, K> builer) where T : class where K : class
     {
         return builer.OnDelete(DeleteBehavior.NoAction);
+    }
+
+    public static void MapStringValue<T, K>(this OwnedNavigationBuilder<T, K> builder,
+        bool required = true, int maxLength = int.MaxValue, string? columnName = null)
+        where T : class
+        where K : StringValue
+    {
+        columnName ??= typeof(T).Name;
+
+        builder.Property(s => s.Value).IsRequired(required).HasMaxLength(maxLength).HasColumnName(columnName);
+    }
+
+    public static void MapStringValue<T, K>(
+        this EntityTypeBuilder<T> builder, Expression<Func<T, K?>> property,
+        bool required = true, int maxLength = int.MaxValue, string? columnName = null)
+        where T : class
+        where K : StringValue
+    {
+        if (property.Body is MemberExpression member)
+        {
+            columnName ??= member.Member.Name;
+        }
+
+        builder.OwnsOne(property).MapStringValue(required, maxLength, columnName);
+    }
+
+    public static void MapStringValidatable<T, K>(
+        this OwnedNavigationBuilder<T, K> builder,
+        string? columnName = null)
+        where T : class
+        where K : StringValidatable
+    {
+        bool required = StringValidatableExtensions.IsRequired<K>();
+        int maxLength = StringValidatableExtensions.GetMaxLength<K>() ?? int.MaxValue;
+
+        builder.MapStringValue(required, maxLength, columnName);
+    }
+
+    public static void MapStringValidatable<T, K>(
+        this EntityTypeBuilder<T> builder, Expression<Func<T, K?>> property,
+        string? columnName = null)
+        where T : class
+        where K : StringValidatable
+    {
+        if (property.Body is MemberExpression member)
+        {
+            columnName ??= member.Member.Name;
+        }
+
+        builder.OwnsOne(property).MapStringValidatable(columnName);
     }
 }
