@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "region": null,
+        "type": "Geographic",
+        "name": "North",
+        "alias": "N",
+        "country": "Brazil"
+    },
+    {
+        "id": 2,
+        "region": null,
+        "type": "Geographic",
+        "name": "Northeast",
+        "alias": "NE",
+        "country": "Brazil"
+    },
+    {
+        "id": 3,
+        "region": null,
+        "type": "Geographic",
+        "name": "Central-West",
+        "alias": "CW",
+        "country": "Brazil"
+    },
+    {
+        "id": 4,
+        "region": null,
+        "type": "Geographic",
+        "name": "Southeast",
+        "alias": "SE",
+        "country": "Brazil"
+    },
+    {
+        "id": 5,
+        "region": null,
+        "type": "Geographic",
+        "name": "South",
+        "alias": "S",
+        "country": "Brazil"
+    }
+]

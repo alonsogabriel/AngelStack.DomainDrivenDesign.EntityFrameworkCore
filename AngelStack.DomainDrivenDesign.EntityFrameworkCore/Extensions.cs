@@ -3,29 +3,21 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using AngelStack.DomainDrivenDesign.Abstractions;
 using AngelStack.DomainDrivenDesign.Abstractions.Extensions;
+using System.Text.RegularExpressions;
+using AngelStack.DomainDrivenDesign.Entities;
+using AngelStack.DomainDrivenDesign.EntityFrameworkCore.Data;
+using AngelStack.DomainDrivenDesign.EntityFrameworkCore.Seeds;
 
 namespace DomainDrivenDesign.Abstractions.EntityFrameworkCore;
 
-public static class Extensions
+public static partial class Extensions
 {
-    public static PropertyBuilder<K> Property<T, K>(
-        this EntityTypeBuilder<T> builder,
-        Expression<Func<T, K>> property,
-        string? columnName)
-        where T : class
-    {
-        return builder.Property<K>(property).HasColumnName(columnName);
-    }
-
     public static void MapBaseEntity<T, K>(
         this EntityTypeBuilder<T> builder,
         string? tableName = null,
         string? schema = null,
-        bool snakeCaseColumns = false) where T : AbstractEntity<K>
+        bool idGenerated = true) where T : AbstractEntity<K>
     {
-        (string? idColumn, string? createdAtColumn, string? updatedAtColumn) =
-            snakeCaseColumns ? ("id", "created_at", "updated_at") : (null, null, null);
-
         if (tableName != null)
         {
             builder.ToTable(tableName, schema);
@@ -33,13 +25,13 @@ public static class Extensions
 
         builder.HasKey(e => e.Id);
 
-        if (typeof(K) == typeof(Guid))
+        if (!idGenerated)
         {
-            builder.Property(e => e.Id, idColumn).ValueGeneratedNever();
+            builder.Property(e => e.Id).ValueGeneratedNever();
         }
 
-        builder.Property(e => e.CreatedAt, createdAtColumn).IsRequired();
-        builder.Property(e => e.UpdatedAt, updatedAtColumn).IsRequired(false);
+        builder.Property(e => e.CreatedAt).IsRequired();
+        builder.Property(e => e.UpdatedAt).IsRequired(false);
     }
 
     public static void MapBaseEntity<T>(
@@ -64,8 +56,7 @@ public static class Extensions
     public static ModelBuilder MapEnum<T>(
         this ModelBuilder modelBuilder,
         string? tableName = null,
-        string? schema = null,
-        bool snakeCaseColumns = false) where T : AbstractEnum<T>
+        string? schema = null) where T : AbstractEnum<T>
     {
         var builder = modelBuilder.Entity<T>();
 
@@ -74,12 +65,9 @@ public static class Extensions
             builder.ToTable(tableName, schema);
         }
 
-        (string? valueColumn, string? nameColumn) =
-            snakeCaseColumns ? ("value", "name") : (null, null);
-
         builder.HasKey(e => e.Value);
-        builder.Property(e => e.Value, valueColumn);
-        builder.Property(e => e.Name, nameColumn).IsRequired().HasMaxLength(50);
+        builder.Property(e => e.Value);
+        builder.Property(e => e.Name).IsRequired().HasMaxLength(50);
         builder.HasIndex(e => e.Name).IsUnique();
         builder.HasData(AbstractEnum<T>.GetValues());
 
@@ -155,4 +143,45 @@ public static class Extensions
 
         builder.OwnsOne(property).MapStringValidatable(columnName);
     }
+
+    public static async Task AddCountriesAsync(this DbContext context)
+    {
+        await new CountrySeed(context).SeedAsync();
+    }
+
+    public static async Task AddRegionTypesAsync(this DbContext context)
+    {
+        await new RegionTypeSeed(context).SeedAsync();
+    }
+
+    public static async Task AddRegionsAsync(this DbContext context)
+    {
+        await new RegionSeed(context).SeedAsync();
+    }
+
+    public static string ToSnakeCase(this string value)
+    {
+        var chrs = value.Select((c, i) =>
+        {
+            int p = i - 1;
+            int n = i + 1;
+
+            bool split =
+                i > 0
+                && char.IsUpper(c)
+                && value[p] != '_'
+                && (
+                    !char.IsUpper(value[p])
+                    || n < value.Length && !char.IsUpper(value[n])
+                );
+
+            return split ? "_" + c : c.ToString();
+        });
+
+        return MultipleUnderscoresRegex()
+            .Replace(string.Concat(chrs).ToLower(), "_");
+    }
+
+    [GeneratedRegex("_{2,}", RegexOptions.Compiled)]
+    private static partial Regex MultipleUnderscoresRegex();
 }

@@ -9,10 +9,7 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder
-            .ConfigureCountry()
-            .ConfigureRegionType()
-            .ConfigureRegion();
+        modelBuilder.ConfigureGeographicEntities();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -21,6 +18,7 @@ public class AppDbContext : DbContext
 
         var connectionString = "Server=localhost;Database=ddd_tests;User Id=sa;Password=sqlserver;Trusted_Connection=True;TrustServerCertificate=True";
 
-        optionsBuilder.UseSqlServer(connectionString).UseSnakeCaseNamingConvention();
+        optionsBuilder.UseSqlServer(connectionString);
+        //optionsBuilder.UseSnakeCaseNamingConvention();
     }
 }

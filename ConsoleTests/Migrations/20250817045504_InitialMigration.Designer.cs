@@ -4,6 +4,7 @@ using ConsoleTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsoleTests.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20250817045504_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,30 @@ namespace ConsoleTests.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegionId");
+
+                    b.ToTable("City");
+                });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Country", b =>
                 {
@@ -92,6 +119,39 @@ namespace ConsoleTests.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RegionType");
+                });
+
+            modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.City", b =>
+                {
+                    b.HasOne("AngelStack.DomainDrivenDesign.Entities.Region", "Region")
+                        .WithMany("Cities")
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("AngelStack.DomainDrivenDesign.ValueObjects.CityName", "Name", b1 =>
+                        {
+                            b1.Property<int>("CityId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasMaxLength(2147483647)
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Name");
+
+                            b1.HasKey("CityId");
+
+                            b1.ToTable("City");
+
+                            b1.WithOwner()
+                                .HasForeignKey("CityId");
+                        });
+
+                    b.Navigation("Name")
+                        .IsRequired();
+
+                    b.Navigation("Region");
                 });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Country", b =>
@@ -214,6 +274,8 @@ namespace ConsoleTests.Migrations
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Region", b =>
                 {
+                    b.Navigation("Cities");
+
                     b.Navigation("Regions");
                 });
 #pragma warning restore 612, 618
