@@ -43,7 +43,7 @@ namespace ConsoleTests.Migrations
 
                     b.HasIndex("RegionId");
 
-                    b.ToTable("City");
+                    b.ToTable("City", (string)null);
                 });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Country", b =>
@@ -62,7 +62,7 @@ namespace ConsoleTests.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Country");
+                    b.ToTable("Country", (string)null);
                 });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Region", b =>
@@ -96,7 +96,7 @@ namespace ConsoleTests.Migrations
 
                     b.HasIndex("TypeId");
 
-                    b.ToTable("Region");
+                    b.ToTable("Region", (string)null);
                 });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.RegionType", b =>
@@ -115,7 +115,7 @@ namespace ConsoleTests.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegionType");
+                    b.ToTable("RegionType", (string)null);
                 });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.City", b =>
@@ -139,7 +139,7 @@ namespace ConsoleTests.Migrations
 
                             b1.HasKey("CityId");
 
-                            b1.ToTable("City");
+                            b1.ToTable("City", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("CityId");
@@ -166,7 +166,7 @@ namespace ConsoleTests.Migrations
 
                             b1.HasKey("CountryId");
 
-                            b1.ToTable("Country");
+                            b1.ToTable("Country", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("CountryId");
@@ -207,7 +207,7 @@ namespace ConsoleTests.Migrations
 
                             b1.HasKey("RegionId");
 
-                            b1.ToTable("Region");
+                            b1.ToTable("Region", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("RegionId");
@@ -226,7 +226,7 @@ namespace ConsoleTests.Migrations
 
                             b1.HasKey("RegionId");
 
-                            b1.ToTable("Region");
+                            b1.ToTable("Region", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("RegionId");
@@ -259,7 +259,7 @@ namespace ConsoleTests.Migrations
 
                             b1.HasKey("RegionTypeId");
 
-                            b1.ToTable("RegionType");
+                            b1.ToTable("RegionType", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("RegionTypeId");

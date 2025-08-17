@@ -21,8 +21,6 @@ public class RegionMap : IEntityTypeConfiguration<Region>
 
         builder.MapStringValidatable(r => r.Alias);
 
-        // TODO remove and map cities
-        builder.Ignore(r => r.Cities);
         builder.Ignore(r => r.AllCities);
     }
 }

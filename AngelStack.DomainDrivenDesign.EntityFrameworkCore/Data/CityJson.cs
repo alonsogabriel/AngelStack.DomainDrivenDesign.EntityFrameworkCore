@@ -1,6 +1,6 @@
 ﻿namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore.Data;
 
-public class CityJson
+internal class CityJson
 {
     public int Id { get; init; }
     public string Region { get; init; }

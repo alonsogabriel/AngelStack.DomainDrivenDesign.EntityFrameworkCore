@@ -14,6 +14,4 @@ await context.AddRegionTypesAsync();
 await context.AddRegionsAsync();
 await context.AddCitiesAsync();
 
-await context.SaveChangesAsync();
-
 Console.WriteLine("Database created successfully!");
