@@ -1,0 +1,1352 @@
+[
+    {
+        "id": 1,
+        "region": "AC",
+        "name": "Rio Branco"
+    },
+    {
+        "id": 2,
+        "region": "AC",
+        "name": "Cruzeiro do Sul"
+    },
+    {
+        "id": 3,
+        "region": "AC",
+        "name": "Sena Madureira"
+    },
+    {
+        "id": 4,
+        "region": "AC",
+        "name": "Tarauacá"
+    },
+    {
+        "id": 5,
+        "region": "AC",
+        "name": "Feijó"
+    },
+    {
+        "id": 6,
+        "region": "AC",
+        "name": "Brasiléia"
+    },
+    {
+        "id": 7,
+        "region": "AC",
+        "name": "Plácido de Castro"
+    },
+    {
+        "id": 8,
+        "region": "AC",
+        "name": "Xapuri"
+    },
+    {
+        "id": 9,
+        "region": "AC",
+        "name": "Mâncio Lima"
+    },
+    {
+        "id": 10,
+        "region": "AC",
+        "name": "Rodrigues Alves"
+    },
+    {
+        "id": 11,
+        "region": "AL",
+        "name": "Maceió"
+    },
+    {
+        "id": 12,
+        "region": "AL",
+        "name": "Arapiraca"
+    },
+    {
+        "id": 13,
+        "region": "AL",
+        "name": "Palmeira dos Índios"
+    },
+    {
+        "id": 14,
+        "region": "AL",
+        "name": "Rio Largo"
+    },
+    {
+        "id": 15,
+        "region": "AL",
+        "name": "União dos Palmares"
+    },
+    {
+        "id": 16,
+        "region": "AL",
+        "name": "Penedo"
+    },
+    {
+        "id": 17,
+        "region": "AL",
+        "name": "São Miguel dos Campos"
+    },
+    {
+        "id": 18,
+        "region": "AL",
+        "name": "Coruripe"
+    },
+    {
+        "id": 19,
+        "region": "AL",
+        "name": "Delmiro Gouveia"
+    },
+    {
+        "id": 20,
+        "region": "AL",
+        "name": "Marechal Deodoro"
+    },
+    {
+        "id": 21,
+        "region": "AP",
+        "name": "Macapá"
+    },
+    {
+        "id": 22,
+        "region": "AP",
+        "name": "Santana"
+    },
+    {
+        "id": 23,
+        "region": "AP",
+        "name": "Laranjal do Jari"
+    },
+    {
+        "id": 24,
+        "region": "AP",
+        "name": "Oiapoque"
+    },
+    {
+        "id": 25,
+        "region": "AP",
+        "name": "Porto Grande"
+    },
+    {
+        "id": 26,
+        "region": "AP",
+        "name": "Mazagão"
+    },
+    {
+        "id": 27,
+        "region": "AP",
+        "name": "Pedra Branca do Amapari"
+    },
+    {
+        "id": 28,
+        "region": "AP",
+        "name": "Vitória do Jari"
+    },
+    {
+        "id": 29,
+        "region": "AP",
+        "name": "Calçoene"
+    },
+    {
+        "id": 30,
+        "region": "AP",
+        "name": "Amapá"
+    },
+    {
+        "id": 31,
+        "region": "AM",
+        "name": "Manaus"
+    },
+    {
+        "id": 32,
+        "region": "AM",
+        "name": "Parintins"
+    },
+    {
+        "id": 33,
+        "region": "AM",
+        "name": "Itacoatiara"
+    },
+    {
+        "id": 34,
+        "region": "AM",
+        "name": "Manacapuru"
+    },
+    {
+        "id": 35,
+        "region": "AM",
+        "name": "Coari"
+    },
+    {
+        "id": 36,
+        "region": "AM",
+        "name": "Tabatinga"
+    },
+    {
+        "id": 37,
+        "region": "AM",
+        "name": "Tefé"
+    },
+    {
+        "id": 38,
+        "region": "AM",
+        "name": "Humaitá"
+    },
+    {
+        "id": 39,
+        "region": "AM",
+        "name": "Iranduba"
+    },
+    {
+        "id": 40,
+        "region": "AM",
+        "name": "São Gabriel da Cachoeira"
+    },
+    {
+        "id": 41,
+        "region": "BA",
+        "name": "Salvador"
+    },
+    {
+        "id": 42,
+        "region": "BA",
+        "name": "Feira de Santana"
+    },
+    {
+        "id": 43,
+        "region": "BA",
+        "name": "Vitória da Conquista"
+    },
+    {
+        "id": 44,
+        "region": "BA",
+        "name": "Camaçari"
+    },
+    {
+        "id": 45,
+        "region": "BA",
+        "name": "Itabuna"
+    },
+    {
+        "id": 46,
+        "region": "BA",
+        "name": "Juazeiro"
+    },
+    {
+        "id": 47,
+        "region": "BA",
+        "name": "Ilhéus"
+    },
+    {
+        "id": 48,
+        "region": "BA",
+        "name": "Lauro de Freitas"
+    },
+    {
+        "id": 49,
+        "region": "BA",
+        "name": "Jequié"
+    },
+    {
+        "id": 50,
+        "region": "BA",
+        "name": "Teixeira de Freitas"
+    },
+    {
+        "id": 51,
+        "region": "CE",
+        "name": "Fortaleza"
+    },
+    {
+        "id": 52,
+        "region": "CE",
+        "name": "Caucaia"
+    },
+    {
+        "id": 53,
+        "region": "CE",
+        "name": "Juazeiro do Norte"
+    },
+    {
+        "id": 54,
+        "region": "CE",
+        "name": "Maracanaú"
+    },
+    {
+        "id": 55,
+        "region": "CE",
+        "name": "Sobral"
+    },
+    {
+        "id": 56,
+        "region": "CE",
+        "name": "Crato"
+    },
+    {
+        "id": 57,
+        "region": "CE",
+        "name": "Itapipoca"
+    },
+    {
+        "id": 58,
+        "region": "CE",
+        "name": "Maranguape"
+    },
+    {
+        "id": 59,
+        "region": "CE",
+        "name": "Iguatu"
+    },
+    {
+        "id": 60,
+        "region": "CE",
+        "name": "Quixadá"
+    },
+    {
+        "id": 61,
+        "region": "DF",
+        "name": "Brasília"
+    },
+    {
+        "id": 62,
+        "region": "DF",
+        "name": "Ceilândia"
+    },
+    {
+        "id": 63,
+        "region": "DF",
+        "name": "Taguatinga"
+    },
+    {
+        "id": 64,
+        "region": "DF",
+        "name": "Samambaia"
+    },
+    {
+        "id": 65,
+        "region": "DF",
+        "name": "Planaltina"
+    },
+    {
+        "id": 66,
+        "region": "DF",
+        "name": "Gama"
+    },
+    {
+        "id": 67,
+        "region": "DF",
+        "name": "Recanto das Emas"
+    },
+    {
+        "id": 68,
+        "region": "DF",
+        "name": "Santa Maria"
+    },
+    {
+        "id": 69,
+        "region": "DF",
+        "name": "Sobradinho"
+    },
+    {
+        "id": 70,
+        "region": "DF",
+        "name": "Guará"
+    },
+    {
+        "id": 71,
+        "region": "ES",
+        "name": "Vitória"
+    },
+    {
+        "id": 72,
+        "region": "ES",
+        "name": "Vila Velha"
+    },
+    {
+        "id": 73,
+        "region": "ES",
+        "name": "Serra"
+    },
+    {
+        "id": 74,
+        "region": "ES",
+        "name": "Cariacica"
+    },
+    {
+        "id": 75,
+        "region": "ES",
+        "name": "Cachoeiro de Itapemirim"
+    },
+    {
+        "id": 76,
+        "region": "ES",
+        "name": "Linhares"
+    },
+    {
+        "id": 77,
+        "region": "ES",
+        "name": "São Mateus"
+    },
+    {
+        "id": 78,
+        "region": "ES",
+        "name": "Guarapari"
+    },
+    {
+        "id": 79,
+        "region": "ES",
+        "name": "Colatina"
+    },
+    {
+        "id": 80,
+        "region": "ES",
+        "name": "Aracruz"
+    },
+    {
+        "id": 81,
+        "region": "GO",
+        "name": "Goiânia"
+    },
+    {
+        "id": 82,
+        "region": "GO",
+        "name": "Aparecida de Goiânia"
+    },
+    {
+        "id": 83,
+        "region": "GO",
+        "name": "Anápolis"
+    },
+    {
+        "id": 84,
+        "region": "GO",
+        "name": "Rio Verde"
+    },
+    {
+        "id": 85,
+        "region": "GO",
+        "name": "Luziânia"
+    },
+    {
+        "id": 86,
+        "region": "GO",
+        "name": "Águas Lindas de Goiás"
+    },
+    {
+        "id": 87,
+        "region": "GO",
+        "name": "Valparaíso de Goiás"
+    },
+    {
+        "id": 88,
+        "region": "GO",
+        "name": "Trindade"
+    },
+    {
+        "id": 89,
+        "region": "GO",
+        "name": "Formosa"
+    },
+    {
+        "id": 90,
+        "region": "GO",
+        "name": "Itumbiara"
+    },
+    {
+        "id": 91,
+        "region": "MA",
+        "name": "São Luís"
+    },
+    {
+        "id": 92,
+        "region": "MA",
+        "name": "Imperatriz"
+    },
+    {
+        "id": 93,
+        "region": "MA",
+        "name": "São José de Ribamar"
+    },
+    {
+        "id": 94,
+        "region": "MA",
+        "name": "Timon"
+    },
+    {
+        "id": 95,
+        "region": "MA",
+        "name": "Caxias"
+    },
+    {
+        "id": 96,
+        "region": "MA",
+        "name": "Paço do Lumiar"
+    },
+    {
+        "id": 97,
+        "region": "MA",
+        "name": "Açailândia"
+    },
+    {
+        "id": 98,
+        "region": "MA",
+        "name": "Bacabal"
+    },
+    {
+        "id": 99,
+        "region": "MA",
+        "name": "Balsas"
+    },
+    {
+        "id": 100,
+        "region": "MA",
+        "name": "Codó"
+    },
+    {
+        "id": 101,
+        "region": "MT",
+        "name": "Cuiabá"
+    },
+    {
+        "id": 102,
+        "region": "MT",
+        "name": "Várzea Grande"
+    },
+    {
+        "id": 103,
+        "region": "MT",
+        "name": "Rondonópolis"
+    },
+    {
+        "id": 104,
+        "region": "MT",
+        "name": "Sinop"
+    },
+    {
+        "id": 105,
+        "region": "MT",
+        "name": "Tangará da Serra"
+    },
+    {
+        "id": 106,
+        "region": "MT",
+        "name": "Cáceres"
+    },
+    {
+        "id": 107,
+        "region": "MT",
+        "name": "Sorriso"
+    },
+    {
+        "id": 108,
+        "region": "MT",
+        "name": "Barra do Garças"
+    },
+    {
+        "id": 109,
+        "region": "MT",
+        "name": "Primavera do Leste"
+    },
+    {
+        "id": 110,
+        "region": "MT",
+        "name": "Alta Floresta"
+    },
+    {
+        "id": 111,
+        "region": "MS",
+        "name": "Campo Grande"
+    },
+    {
+        "id": 112,
+        "region": "MS",
+        "name": "Dourados"
+    },
+    {
+        "id": 113,
+        "region": "MS",
+        "name": "Três Lagoas"
+    },
+    {
+        "id": 114,
+        "region": "MS",
+        "name": "Corumbá"
+    },
+    {
+        "id": 115,
+        "region": "MS",
+        "name": "Ponta Porã"
+    },
+    {
+        "id": 116,
+        "region": "MS",
+        "name": "Naviraí"
+    },
+    {
+        "id": 117,
+        "region": "MS",
+        "name": "Nova Andradina"
+    },
+    {
+        "id": 118,
+        "region": "MS",
+        "name": "Aquidauana"
+    },
+    {
+        "id": 119,
+        "region": "MS",
+        "name": "Sidrolândia"
+    },
+    {
+        "id": 120,
+        "region": "MS",
+        "name": "Paranaíba"
+    },
+    {
+        "id": 121,
+        "region": "MG",
+        "name": "Belo Horizonte"
+    },
+    {
+        "id": 122,
+        "region": "MG",
+        "name": "Uberlândia"
+    },
+    {
+        "id": 123,
+        "region": "MG",
+        "name": "Contagem"
+    },
+    {
+        "id": 124,
+        "region": "MG",
+        "name": "Juiz de Fora"
+    },
+    {
+        "id": 125,
+        "region": "MG",
+        "name": "Betim"
+    },
+    {
+        "id": 126,
+        "region": "MG",
+        "name": "Montes Claros"
+    },
+    {
+        "id": 127,
+        "region": "MG",
+        "name": "Uberaba"
+    },
+    {
+        "id": 128,
+        "region": "MG",
+        "name": "Governador Valadares"
+    },
+    {
+        "id": 129,
+        "region": "MG",
+        "name": "Ipatinga"
+    },
+    {
+        "id": 130,
+        "region": "MG",
+        "name": "Sete Lagoas"
+    },
+    {
+        "id": 131,
+        "region": "PA",
+        "name": "Belém"
+    },
+    {
+        "id": 132,
+        "region": "PA",
+        "name": "Ananindeua"
+    },
+    {
+        "id": 133,
+        "region": "PA",
+        "name": "Santarém"
+    },
+    {
+        "id": 134,
+        "region": "PA",
+        "name": "Marabá"
+    },
+    {
+        "id": 135,
+        "region": "PA",
+        "name": "Castanhal"
+    },
+    {
+        "id": 136,
+        "region": "PA",
+        "name": "Parauapebas"
+    },
+    {
+        "id": 137,
+        "region": "PA",
+        "name": "Abaetetuba"
+    },
+    {
+        "id": 138,
+        "region": "PA",
+        "name": "Cametá"
+    },
+    {
+        "id": 139,
+        "region": "PA",
+        "name": "Bragança"
+    },
+    {
+        "id": 140,
+        "region": "PA",
+        "name": "Marituba"
+    },
+    {
+        "id": 141,
+        "region": "PB",
+        "name": "João Pessoa"
+    },
+    {
+        "id": 142,
+        "region": "PB",
+        "name": "Campina Grande"
+    },
+    {
+        "id": 143,
+        "region": "PB",
+        "name": "Santa Rita"
+    },
+    {
+        "id": 144,
+        "region": "PB",
+        "name": "Patos"
+    },
+    {
+        "id": 145,
+        "region": "PB",
+        "name": "Bayeux"
+    },
+    {
+        "id": 146,
+        "region": "PB",
+        "name": "Sousa"
+    },
+    {
+        "id": 147,
+        "region": "PB",
+        "name": "Cabedelo"
+    },
+    {
+        "id": 148,
+        "region": "PB",
+        "name": "Cajazeiras"
+    },
+    {
+        "id": 149,
+        "region": "PB",
+        "name": "Guarabira"
+    },
+    {
+        "id": 150,
+        "region": "PB",
+        "name": "Mamanguape"
+    },
+    {
+        "id": 151,
+        "region": "PR",
+        "name": "Curitiba"
+    },
+    {
+        "id": 152,
+        "region": "PR",
+        "name": "Londrina"
+    },
+    {
+        "id": 153,
+        "region": "PR",
+        "name": "Maringá"
+    },
+    {
+        "id": 154,
+        "region": "PR",
+        "name": "Ponta Grossa"
+    },
+    {
+        "id": 155,
+        "region": "PR",
+        "name": "Cascavel"
+    },
+    {
+        "id": 156,
+        "region": "PR",
+        "name": "São José dos Pinhais"
+    },
+    {
+        "id": 157,
+        "region": "PR",
+        "name": "Foz do Iguaçu"
+    },
+    {
+        "id": 158,
+        "region": "PR",
+        "name": "Colombo"
+    },
+    {
+        "id": 159,
+        "region": "PR",
+        "name": "Guarapuava"
+    },
+    {
+        "id": 160,
+        "region": "PR",
+        "name": "Paranaguá"
+    },
+    {
+        "id": 161,
+        "region": "PE",
+        "name": "Recife"
+    },
+    {
+        "id": 162,
+        "region": "PE",
+        "name": "Jaboatão dos Guararapes"
+    },
+    {
+        "id": 163,
+        "region": "PE",
+        "name": "Olinda"
+    },
+    {
+        "id": 164,
+        "region": "PE",
+        "name": "Caruaru"
+    },
+    {
+        "id": 165,
+        "region": "PE",
+        "name": "Petrolina"
+    },
+    {
+        "id": 166,
+        "region": "PE",
+        "name": "Paulista"
+    },
+    {
+        "id": 167,
+        "region": "PE",
+        "name": "Cabo de Santo Agostinho"
+    },
+    {
+        "id": 168,
+        "region": "PE",
+        "name": "Camaragibe"
+    },
+    {
+        "id": 169,
+        "region": "PE",
+        "name": "Garanhuns"
+    },
+    {
+        "id": 170,
+        "region": "PE",
+        "name": "Vitória de Santo Antão"
+    },
+    {
+        "id": 171,
+        "region": "PI",
+        "name": "Teresina"
+    },
+    {
+        "id": 172,
+        "region": "PI",
+        "name": "Parnaíba"
+    },
+    {
+        "id": 173,
+        "region": "PI",
+        "name": "Picos"
+    },
+    {
+        "id": 174,
+        "region": "PI",
+        "name": "Piripiri"
+    },
+    {
+        "id": 175,
+        "region": "PI",
+        "name": "Floriano"
+    },
+    {
+        "id": 176,
+        "region": "PI",
+        "name": "Campo Maior"
+    },
+    {
+        "id": 177,
+        "region": "PI",
+        "name": "Barras"
+    },
+    {
+        "id": 178,
+        "region": "PI",
+        "name": "União"
+    },
+    {
+        "id": 179,
+        "region": "PI",
+        "name": "Oeiras"
+    },
+    {
+        "id": 180,
+        "region": "PI",
+        "name": "José de Freitas"
+    },
+    {
+        "id": 181,
+        "region": "RJ",
+        "name": "Rio de Janeiro"
+    },
+    {
+        "id": 182,
+        "region": "RJ",
+        "name": "São Gonçalo"
+    },
+    {
+        "id": 183,
+        "region": "RJ",
+        "name": "Duque de Caxias"
+    },
+    {
+        "id": 184,
+        "region": "RJ",
+        "name": "Nova Iguaçu"
+    },
+    {
+        "id": 185,
+        "region": "RJ",
+        "name": "Niterói"
+    },
+    {
+        "id": 186,
+        "region": "RJ",
+        "name": "Belford Roxo"
+    },
+    {
+        "id": 187,
+        "region": "RJ",
+        "name": "São João de Meriti"
+    },
+    {
+        "id": 188,
+        "region": "RJ",
+        "name": "Campos dos Goytacazes"
+    },
+    {
+        "id": 189,
+        "region": "RJ",
+        "name": "Petrópolis"
+    },
+    {
+        "id": 190,
+        "region": "RJ",
+        "name": "Volta Redonda"
+    },
+    {
+        "id": 191,
+        "region": "RN",
+        "name": "Natal"
+    },
+    {
+        "id": 192,
+        "region": "RN",
+        "name": "Mossoró"
+    },
+    {
+        "id": 193,
+        "region": "RN",
+        "name": "Parnamirim"
+    },
+    {
+        "id": 194,
+        "region": "RN",
+        "name": "São Gonçalo do Amarante"
+    },
+    {
+        "id": 195,
+        "region": "RN",
+        "name": "Macaíba"
+    },
+    {
+        "id": 196,
+        "region": "RN",
+        "name": "Ceará-Mirim"
+    },
+    {
+        "id": 197,
+        "region": "RN",
+        "name": "Caicó"
+    },
+    {
+        "id": 198,
+        "region": "RN",
+        "name": "Assu"
+    },
+    {
+        "id": 199,
+        "region": "RN",
+        "name": "Currais Novos"
+    },
+    {
+        "id": 200,
+        "region": "RN",
+        "name": "Santa Cruz"
+    },
+    {
+        "id": 201,
+        "region": "RS",
+        "name": "Porto Alegre"
+    },
+    {
+        "id": 202,
+        "region": "RS",
+        "name": "Caxias do Sul"
+    },
+    {
+        "id": 203,
+        "region": "RS",
+        "name": "Pelotas"
+    },
+    {
+        "id": 204,
+        "region": "RS",
+        "name": "Canoas"
+    },
+    {
+        "id": 205,
+        "region": "RS",
+        "name": "Santa Maria"
+    },
+    {
+        "id": 206,
+        "region": "RS",
+        "name": "Gravataí"
+    },
+    {
+        "id": 207,
+        "region": "RS",
+        "name": "Novo Hamburgo"
+    },
+    {
+        "id": 208,
+        "region": "RS",
+        "name": "São Leopoldo"
+    },
+    {
+        "id": 209,
+        "region": "RS",
+        "name": "Rio Grande"
+    },
+    {
+        "id": 210,
+        "region": "RS",
+        "name": "Alvorada"
+    },
+    {
+        "id": 211,
+        "region": "RO",
+        "name": "Porto Velho"
+    },
+    {
+        "id": 212,
+        "region": "RO",
+        "name": "Ji-Paraná"
+    },
+    {
+        "id": 213,
+        "region": "RO",
+        "name": "Ariquemes"
+    },
+    {
+        "id": 214,
+        "region": "RO",
+        "name": "Vilhena"
+    },
+    {
+        "id": 215,
+        "region": "RO",
+        "name": "Cacoal"
+    },
+    {
+        "id": 216,
+        "region": "RO",
+        "name": "Rolim de Moura"
+    },
+    {
+        "id": 217,
+        "region": "RO",
+        "name": "Jaru"
+    },
+    {
+        "id": 218,
+        "region": "RO",
+        "name": "Guajará-Mirim"
+    },
+    {
+        "id": 219,
+        "region": "RO",
+        "name": "Machadinho d'Oeste"
+    },
+    {
+        "id": 220,
+        "region": "RO",
+        "name": "Buritis"
+    },
+    {
+        "id": 221,
+        "region": "RR",
+        "name": "Boa Vista"
+    },
+    {
+        "id": 222,
+        "region": "RR",
+        "name": "Rorainópolis"
+    },
+    {
+        "id": 223,
+        "region": "RR",
+        "name": "Caracaraí"
+    },
+    {
+        "id": 224,
+        "region": "RR",
+        "name": "Mucajaí"
+    },
+    {
+        "id": 225,
+        "region": "RR",
+        "name": "Alto Alegre"
+    },
+    {
+        "id": 226,
+        "region": "RR",
+        "name": "Amajari"
+    },
+    {
+        "id": 227,
+        "region": "RR",
+        "name": "Pacaraima"
+    },
+    {
+        "id": 228,
+        "region": "RR",
+        "name": "Normandia"
+    },
+    {
+        "id": 229,
+        "region": "RR",
+        "name": "Bonfim"
+    },
+    {
+        "id": 230,
+        "region": "RR",
+        "name": "Cantá"
+    },
+    {
+        "id": 231,
+        "region": "SC",
+        "name": "Florianópolis"
+    },
+    {
+        "id": 232,
+        "region": "SC",
+        "name": "Joinville"
+    },
+    {
+        "id": 233,
+        "region": "SC",
+        "name": "Blumenau"
+    },
+    {
+        "id": 234,
+        "region": "SC",
+        "name": "São José"
+    },
+    {
+        "id": 235,
+        "region": "SC",
+        "name": "Chapecó"
+    },
+    {
+        "id": 236,
+        "region": "SC",
+        "name": "Criciúma"
+    },
+    {
+        "id": 237,
+        "region": "SC",
+        "name": "Itajaí"
+    },
+    {
+        "id": 238,
+        "region": "SC",
+        "name": "Lages"
+    },
+    {
+        "id": 239,
+        "region": "SC",
+        "name": "Jaraguá do Sul"
+    },
+    {
+        "id": 240,
+        "region": "SC",
+        "name": "Palhoça"
+    },
+    {
+        "id": 241,
+        "region": "SP",
+        "name": "São Paulo"
+    },
+    {
+        "id": 242,
+        "region": "SP",
+        "name": "Campinas"
+    },
+    {
+        "id": 243,
+        "region": "SP",
+        "name": "São Bernardo do Campo"
+    },
+    {
+        "id": 244,
+        "region": "SP",
+        "name": "Santo André"
+    },
+    {
+        "id": 245,
+        "region": "SP",
+        "name": "Guarulhos"
+    },
+    {
+        "id": 246,
+        "region": "SP",
+        "name": "Osasco"
+    },
+    {
+        "id": 247,
+        "region": "SP",
+        "name": "Ribeirão Preto"
+    },
+    {
+        "id": 248,
+        "region": "SP",
+        "name": "Sorocaba"
+    },
+    {
+        "id": 249,
+        "region": "SP",
+        "name": "Mogi das Cruzes"
+    },
+    {
+        "id": 250,
+        "region": "SP",
+        "name": "Santos"
+    },
+    {
+        "id": 251,
+        "region": "SE",
+        "name": "Aracaju"
+    },
+    {
+        "id": 252,
+        "region": "SE",
+        "name": "Nossa Senhora do Socorro"
+    },
+    {
+        "id": 253,
+        "region": "SE",
+        "name": "Lagarto"
+    },
+    {
+        "id": 254,
+        "region": "SE",
+        "name": "Itabaiana"
+    },
+    {
+        "id": 255,
+        "region": "SE",
+        "name": "Estância"
+    },
+    {
+        "id": 256,
+        "region": "SE",
+        "name": "Tobias Barreto"
+    },
+    {
+        "id": 257,
+        "region": "SE",
+        "name": "Simão Dias"
+    },
+    {
+        "id": 258,
+        "region": "SE",
+        "name": "Itabaianinha"
+    },
+    {
+        "id": 259,
+        "region": "SE",
+        "name": "Capela"
+    },
+    {
+        "id": 260,
+        "region": "SE",
+        "name": "Poço Redondo"
+    },
+    {
+        "id": 261,
+        "region": "TO",
+        "name": "Palmas"
+    },
+    {
+        "id": 262,
+        "region": "TO",
+        "name": "Araguaína"
+    },
+    {
+        "id": 263,
+        "region": "TO",
+        "name": "Gurupi"
+    },
+    {
+        "id": 264,
+        "region": "TO",
+        "name": "Porto Nacional"
+    },
+    {
+        "id": 265,
+        "region": "TO",
+        "name": "Paraíso do Tocantins"
+    },
+    {
+        "id": 266,
+        "region": "TO",
+        "name": "Colinas do Tocantins"
+    },
+    {
+        "id": 267,
+        "region": "TO",
+        "name": "Guaraí"
+    },
+    {
+        "id": 268,
+        "region": "TO",
+        "name": "Dianópolis"
+    },
+    {
+        "id": 269,
+        "region": "TO",
+        "name": "Tocantinópolis"
+    },
+    {
+        "id": 270,
+        "region": "TO",
+        "name": "Formoso do Araguaia"
+    }
+]

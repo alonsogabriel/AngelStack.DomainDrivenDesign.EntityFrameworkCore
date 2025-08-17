@@ -159,6 +159,11 @@ public static partial class Extensions
         await new RegionSeed(context).SeedAsync();
     }
 
+    public static async Task AddCitiesAsync(this DbContext context)
+    {
+        await new CitySeed(context).SeedAsync();
+    }
+
     public static string ToSnakeCase(this string value)
     {
         var chrs = value.Select((c, i) =>

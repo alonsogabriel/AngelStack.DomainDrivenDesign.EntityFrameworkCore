@@ -19,6 +19,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="Data\Json\brazil-cities.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Data\Json\brazil-regions.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

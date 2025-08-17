@@ -8,9 +8,11 @@ using var context = new AppDbContext();
 
 await context.Database.EnsureDeletedAsync();
 await context.Database.MigrateAsync();
+
 await context.AddCountriesAsync();
 await context.AddRegionTypesAsync();
 await context.AddRegionsAsync();
+await context.AddCitiesAsync();
 
 await context.SaveChangesAsync();
 

@@ -55,6 +55,20 @@ internal static class DataLoader
         return regions ?? [];
     }
 
+    public static IEnumerable<City> LoadBrazilCities(IEnumerable<Region> regions)
+    {
+        var citiesJson = ParseJsonArrayFromFile<CityJson>("brazil-cities.json") ?? [];
+        var cities = citiesJson.Select(data =>
+        {
+            var name = new CityName(data.Name);
+            var region = regions.FirstOrDefault(r => data.Region.Equals(r.Alias?.Value)).Guard();
+
+            return new City(region, name);
+        });
+
+        return cities;
+    }
+
     private static string ReadFromJson(string path)
     {
         return File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Data", "Json", path));
