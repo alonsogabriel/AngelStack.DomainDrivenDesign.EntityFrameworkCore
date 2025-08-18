@@ -65,14 +65,14 @@ public static class ValueObjectMappings
     {
         builder.MapStringValidatable(property);
 
-        builder.OwnsOne(property, nav =>
+        builder.OwnsOne(property, phone =>
         {
-            nav.OwnsOne(n => n.CountryCode, code =>
+            phone.OwnsOne(n => n.CountryCode, code =>
             {
-                code.Property(c => c.Value).IsRequired();
+                code.Property(c => c.Value).IsRequired().HasColumnName("PhoneCountryCode");
             });
 
-            nav.OwnsOne(n => n.AreaCode).MapStringValidatable();
+            phone.OwnsOne(n => n.AreaCode).MapStringValidatable("PhoneAreaCode");
         });
     }
 }
