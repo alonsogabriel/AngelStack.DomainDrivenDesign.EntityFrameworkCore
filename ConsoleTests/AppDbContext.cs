@@ -13,7 +13,8 @@ public class AppDbContext : DbContext
 
         modelBuilder
             .ConfigureGeographicEntities()
-            .ApplyConfiguration(new PersonMap());
+            .ApplyConfiguration(new PersonMap())
+            .ApplyConfiguration(new UserMap());
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

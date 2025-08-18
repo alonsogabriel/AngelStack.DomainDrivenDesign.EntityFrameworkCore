@@ -21,6 +21,6 @@ public class BasePersonMap<T> : IEntityTypeConfiguration<T> where T : AbstractPe
         });
 
         // TODO add PlaceOfBirthId to AbstractPerson on AngelStack.DomainDrivenDesign
-        builder.HasOne(p => p.PlaceOfBirth).WithMany().HasForeignKey("PlaceOfBirthId").IsRequired(false);
+        builder.HasOne(p => p.PlaceOfBirth).WithMany().HasForeignKey(p => p.PlaceOfBirthId).IsRequired(false);
     }
 }

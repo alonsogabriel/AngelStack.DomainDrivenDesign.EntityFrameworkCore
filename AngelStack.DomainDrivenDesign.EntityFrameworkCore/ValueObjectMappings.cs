@@ -3,6 +3,7 @@ using AngelStack.DomainDrivenDesign.Abstractions;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using AngelStack.DomainDrivenDesign.ValueObjects;
 
 namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore;
 
@@ -13,8 +14,6 @@ public static class ValueObjectMappings
     where T : class
     where K : StringValue
     {
-        columnName ??= typeof(T).Name;
-
         builder.Property(s => s.Value)
             .IsRequired(required)
             .HasMaxLength(maxLength)
@@ -59,5 +58,21 @@ public static class ValueObjectMappings
         }
 
         builder.OwnsOne(property).MapStringValidatable(columnName);
+    }
+
+    public static void MapPhoneNumber<T>(this EntityTypeBuilder<T> builder,
+        Expression<Func<T, PhoneNumber?>> property) where T : class
+    {
+        builder.MapStringValidatable(property);
+
+        builder.OwnsOne(property, nav =>
+        {
+            nav.OwnsOne(n => n.CountryCode, code =>
+            {
+                code.Property(c => c.Value).IsRequired();
+            });
+
+            nav.OwnsOne(n => n.AreaCode).MapStringValidatable();
+        });
     }
 }
