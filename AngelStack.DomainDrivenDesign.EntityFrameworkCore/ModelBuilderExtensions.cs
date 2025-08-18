@@ -14,10 +14,12 @@ public static class ModelBuilderExtensions
             .ConfigureCountry()
             .ConfigureRegionType()
             .ConfigureRegion()
-            .ConfigureCity();
+            .ConfigureCity()
+            .ConfigureAddress();
     }
 
     private static ModelBuilder ConfigureRegion(this ModelBuilder builder) => builder.ApplyConfiguration(new RegionMap());
     private static ModelBuilder ConfigureRegionType(this ModelBuilder builder) => builder.ApplyConfiguration(new RegionTypeMap());
     private static ModelBuilder ConfigureCity(this ModelBuilder builder) => builder.ApplyConfiguration(new CityMap());
+    private static ModelBuilder ConfigureAddress(this ModelBuilder builder) => builder.ApplyConfiguration(new AddressMap());
 }

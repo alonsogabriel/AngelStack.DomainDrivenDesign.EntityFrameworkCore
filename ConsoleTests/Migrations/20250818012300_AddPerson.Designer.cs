@@ -4,6 +4,7 @@ using ConsoleTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsoleTests.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250818012300_AddPerson")]
+    partial class AddPerson
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,28 +24,6 @@ namespace ConsoleTests.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Address", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId");
-
-                    b.ToTable("Address");
-                });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.City", b =>
                 {
@@ -146,9 +127,6 @@ namespace ConsoleTests.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AddressId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -163,132 +141,9 @@ namespace ConsoleTests.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId")
-                        .IsUnique()
-                        .HasFilter("[AddressId] IS NOT NULL");
-
                     b.HasIndex("PlaceOfBirthId");
 
                     b.ToTable("Person");
-                });
-
-            modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.Address", b =>
-                {
-                    b.HasOne("AngelStack.DomainDrivenDesign.Entities.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.OwnsOne("AngelStack.DomainDrivenDesign.ValueObjects.AddressDetails", "Details", b1 =>
-                        {
-                            b1.Property<Guid>("AddressId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(120)
-                                .HasColumnType("nvarchar(120)")
-                                .HasColumnName("Details");
-
-                            b1.HasKey("AddressId");
-
-                            b1.ToTable("Address");
-
-                            b1.WithOwner()
-                                .HasForeignKey("AddressId");
-                        });
-
-                    b.OwnsOne("AngelStack.DomainDrivenDesign.ValueObjects.AddressNumber", "Number", b1 =>
-                        {
-                            b1.Property<Guid>("AddressId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)")
-                                .HasColumnName("Number");
-
-                            b1.HasKey("AddressId");
-
-                            b1.ToTable("Address");
-
-                            b1.WithOwner()
-                                .HasForeignKey("AddressId");
-                        });
-
-                    b.OwnsOne("AngelStack.DomainDrivenDesign.ValueObjects.Neighborhood", "Neighborhood", b1 =>
-                        {
-                            b1.Property<Guid>("AddressId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(80)
-                                .HasColumnType("nvarchar(80)")
-                                .HasColumnName("Neighborhood");
-
-                            b1.HasKey("AddressId");
-
-                            b1.ToTable("Address");
-
-                            b1.WithOwner()
-                                .HasForeignKey("AddressId");
-                        });
-
-                    b.OwnsOne("AngelStack.DomainDrivenDesign.ValueObjects.Street", "Street", b1 =>
-                        {
-                            b1.Property<Guid>("AddressId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(120)
-                                .HasColumnType("nvarchar(120)")
-                                .HasColumnName("Street");
-
-                            b1.HasKey("AddressId");
-
-                            b1.ToTable("Address");
-
-                            b1.WithOwner()
-                                .HasForeignKey("AddressId");
-                        });
-
-                    b.OwnsOne("AngelStack.DomainDrivenDesign.ValueObjects.ZipCode", "ZipCode", b1 =>
-                        {
-                            b1.Property<Guid>("AddressId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(40)
-                                .HasColumnType("nvarchar(40)")
-                                .HasColumnName("ZipCode");
-
-                            b1.HasKey("AddressId");
-
-                            b1.ToTable("Address");
-
-                            b1.WithOwner()
-                                .HasForeignKey("AddressId");
-                        });
-
-                    b.Navigation("City");
-
-                    b.Navigation("Details");
-
-                    b.Navigation("Neighborhood");
-
-                    b.Navigation("Number")
-                        .IsRequired();
-
-                    b.Navigation("Street")
-                        .IsRequired();
-
-                    b.Navigation("ZipCode")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("AngelStack.DomainDrivenDesign.Entities.City", b =>
@@ -507,10 +362,6 @@ namespace ConsoleTests.Migrations
 
             modelBuilder.Entity("ConsoleTests.Entities.Person", b =>
                 {
-                    b.HasOne("AngelStack.DomainDrivenDesign.Entities.Address", "Address")
-                        .WithOne()
-                        .HasForeignKey("ConsoleTests.Entities.Person", "AddressId");
-
                     b.HasOne("AngelStack.DomainDrivenDesign.Entities.City", "PlaceOfBirth")
                         .WithMany()
                         .HasForeignKey("PlaceOfBirthId");
@@ -550,8 +401,6 @@ namespace ConsoleTests.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("PersonId");
                         });
-
-                    b.Navigation("Address");
 
                     b.Navigation("DateOfBirth");
 

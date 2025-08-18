@@ -12,5 +12,11 @@ public class CountryMap : IEntityTypeConfiguration<Country>
         builder.MapBaseEntity<Country, int>();
 
         builder.MapStringValidatable(c => c.Name);
+
+        builder.MapStringValidatable(c => c.IsoA2);
+
+        builder.MapStringValidatable(c => c.IsoA3);
+
+        builder.MapStringValidatable(c => c.IsoNumber);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using ConsoleTests;
-using DomainDrivenDesign.Abstractions.EntityFrameworkCore;
+using AngelStack.DomainDrivenDesign.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 Console.WriteLine("Hello, World!");

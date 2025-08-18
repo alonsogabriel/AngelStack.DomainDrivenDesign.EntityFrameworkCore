@@ -1,4 +1,6 @@
 ﻿using AngelStack.DomainDrivenDesign.EntityFrameworkCore;
+using AngelStack.DomainDrivenDesign.EntityFrameworkCore.Mappings;
+using ConsoleTests.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleTests;
@@ -9,7 +11,9 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.ConfigureGeographicEntities();
+        modelBuilder
+            .ConfigureGeographicEntities()
+            .ApplyConfiguration(new PersonMap());
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

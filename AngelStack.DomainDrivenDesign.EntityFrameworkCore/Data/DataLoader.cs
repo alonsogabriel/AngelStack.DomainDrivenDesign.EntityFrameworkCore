@@ -14,7 +14,11 @@ internal static class DataLoader
         var countries = countriesJson?.Select(c =>
         {
             var name = new CountryName(c.Name);
-            return new Country(name);
+            var isoA2 = new CountryIsoA2(c.IsoA2Code);
+            var isoA3 = new CountryIsoA3(c.IsoA3Code);
+            var isoNumber = new CountryIsoNumber(c.IsoNumber);
+
+            return new Country(name, isoA2, isoA3, isoNumber);
         });
 
         return countries ?? [];
@@ -38,7 +42,7 @@ internal static class DataLoader
         var country = countries.FirstOrDefault(c => c.Name.Value.Equals("Brazil")).Guard();
         List<Region> regions = [];
 
-        foreach(var data in regionsJson)
+        foreach (var data in regionsJson)
         {
             // TODO add iso properties to country
             // TODO override equals of stringvalue

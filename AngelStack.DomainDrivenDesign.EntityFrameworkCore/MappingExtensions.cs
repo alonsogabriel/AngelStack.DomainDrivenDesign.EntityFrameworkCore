@@ -1,16 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 using AngelStack.DomainDrivenDesign.Abstractions;
-using AngelStack.DomainDrivenDesign.Abstractions.Extensions;
 using System.Text.RegularExpressions;
-using AngelStack.DomainDrivenDesign.Entities;
-using AngelStack.DomainDrivenDesign.EntityFrameworkCore.Data;
-using AngelStack.DomainDrivenDesign.EntityFrameworkCore.Seeds;
 
 namespace DomainDrivenDesign.Abstractions.EntityFrameworkCore;
 
-public static partial class Extensions
+public static partial class MappingExtensions
 {
     public static void MapBaseEntity<T, K>(
         this EntityTypeBuilder<T> builder,
@@ -92,76 +87,6 @@ public static partial class Extensions
         this ReferenceCollectionBuilder<T, K> builer) where T : class where K : class
     {
         return builer.OnDelete(DeleteBehavior.NoAction);
-    }
-
-    public static void MapStringValue<T, K>(this OwnedNavigationBuilder<T, K> builder,
-        bool required = true, int maxLength = int.MaxValue, string? columnName = null)
-        where T : class
-        where K : StringValue
-    {
-        columnName ??= typeof(T).Name;
-
-        builder.Property(s => s.Value).IsRequired(required).HasMaxLength(maxLength).HasColumnName(columnName);
-    }
-
-    public static void MapStringValue<T, K>(
-        this EntityTypeBuilder<T> builder, Expression<Func<T, K?>> property,
-        bool required = true, int maxLength = int.MaxValue, string? columnName = null)
-        where T : class
-        where K : StringValue
-    {
-        if (property.Body is MemberExpression member)
-        {
-            columnName ??= member.Member.Name;
-        }
-
-        builder.OwnsOne(property).MapStringValue(required, maxLength, columnName);
-    }
-
-    public static void MapStringValidatable<T, K>(
-        this OwnedNavigationBuilder<T, K> builder,
-        string? columnName = null)
-        where T : class
-        where K : StringValidatable
-    {
-        bool required = StringValidatableExtensions.IsRequired<K>();
-        int maxLength = StringValidatableExtensions.GetMaxLength<K>() ?? int.MaxValue;
-
-        builder.MapStringValue(required, maxLength, columnName);
-    }
-
-    public static void MapStringValidatable<T, K>(
-        this EntityTypeBuilder<T> builder, Expression<Func<T, K?>> property,
-        string? columnName = null)
-        where T : class
-        where K : StringValidatable
-    {
-        if (property.Body is MemberExpression member)
-        {
-            columnName ??= member.Member.Name;
-        }
-
-        builder.OwnsOne(property).MapStringValidatable(columnName);
-    }
-
-    public static async Task AddCountriesAsync(this DbContext context)
-    {
-        await new CountrySeed(context).SeedAsync();
-    }
-
-    public static async Task AddRegionTypesAsync(this DbContext context)
-    {
-        await new RegionTypeSeed(context).SeedAsync();
-    }
-
-    public static async Task AddRegionsAsync(this DbContext context)
-    {
-        await new RegionSeed(context).SeedAsync();
-    }
-
-    public static async Task AddCitiesAsync(this DbContext context)
-    {
-        await new CitySeed(context).SeedAsync();
     }
 
     public static string ToSnakeCase(this string value)
