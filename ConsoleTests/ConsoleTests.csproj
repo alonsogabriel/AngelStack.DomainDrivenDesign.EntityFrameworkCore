@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<NoWarn>8618</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EFCore.NamingConventions" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AngelStack.DomainDrivenDesign.EntityFrameworkCore\AngelStack.DomainDrivenDesign.EntityFrameworkCore.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,218 @@
+[
+    {
+        "id": 1,
+        "region": "North",
+        "type": "State",
+        "name": "Acre",
+        "alias": "AC",
+        "country": "Brazil"
+    },
+    {
+        "id": 2,
+        "region": "North",
+        "type": "State",
+        "name": "Amapá",
+        "alias": "AP",
+        "country": "Brazil"
+    },
+    {
+        "id": 3,
+        "region": "North",
+        "type": "State",
+        "name": "Amazonas",
+        "alias": "AM",
+        "country": "Brazil"
+    },
+    {
+        "id": 4,
+        "region": "North",
+        "type": "State",
+        "name": "Pará",
+        "alias": "PA",
+        "country": "Brazil"
+    },
+    {
+        "id": 5,
+        "region": "North",
+        "type": "State",
+        "name": "Rondônia",
+        "alias": "RO",
+        "country": "Brazil"
+    },
+    {
+        "id": 6,
+        "region": "North",
+        "type": "State",
+        "name": "Roraima",
+        "alias": "RR",
+        "country": "Brazil"
+    },
+    {
+        "id": 7,
+        "region": "North",
+        "type": "State",
+        "name": "Tocantins",
+        "alias": "TO",
+        "country": "Brazil"
+    },
+    {
+        "id": 8,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Alagoas",
+        "alias": "AL",
+        "country": "Brazil"
+    },
+    {
+        "id": 9,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Bahia",
+        "alias": "BA",
+        "country": "Brazil"
+    },
+    {
+        "id": 10,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Ceará",
+        "alias": "CE",
+        "country": "Brazil"
+    },
+    {
+        "id": 11,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Maranhão",
+        "alias": "MA",
+        "country": "Brazil"
+    },
+    {
+        "id": 12,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Paraíba",
+        "alias": "PB",
+        "country": "Brazil"
+    },
+    {
+        "id": 13,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Pernambuco",
+        "alias": "PE",
+        "country": "Brazil"
+    },
+    {
+        "id": 14,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Piauí",
+        "alias": "PI",
+        "country": "Brazil"
+    },
+    {
+        "id": 15,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Rio Grande do Norte",
+        "alias": "RN",
+        "country": "Brazil"
+    },
+    {
+        "id": 16,
+        "region": "Northeast",
+        "type": "State",
+        "name": "Sergipe",
+        "alias": "SE",
+        "country": "Brazil"
+    },
+    {
+        "id": 17,
+        "region": "Central-West",
+        "type": "State",
+        "name": "Goiás",
+        "alias": "GO",
+        "country": "Brazil"
+    },
+    {
+        "id": 18,
+        "region": "Central-West",
+        "type": "State",
+        "name": "Mato Grosso",
+        "alias": "MT",
+        "country": "Brazil"
+    },
+    {
+        "id": 19,
+        "region": "Central-West",
+        "type": "State",
+        "name": "Mato Grosso do Sul",
+        "alias": "MS",
+        "country": "Brazil"
+    },
+    {
+        "id": 20,
+        "region": "Central-West",
+        "type": "State",
+        "name": "Distrito Federal",
+        "alias": "DF",
+        "country": "Brazil"
+    },
+    {
+        "id": 21,
+        "region": "Southeast",
+        "type": "State",
+        "name": "Espírito Santo",
+        "alias": "ES",
+        "country": "Brazil"
+    },
+    {
+        "id": 22,
+        "region": "Southeast",
+        "type": "State",
+        "name": "Minas Gerais",
+        "alias": "MG",
+        "country": "Brazil"
+    },
+    {
+        "id": 23,
+        "region": "Southeast",
+        "type": "State",
+        "name": "Rio de Janeiro",
+        "alias": "RJ",
+        "country": "Brazil"
+    },
+    {
+        "id": 24,
+        "region": "Southeast",
+        "type": "State",
+        "name": "São Paulo",
+        "alias": "SP",
+        "country": "Brazil"
+    },
+    {
+        "id": 25,
+        "region": "South",
+        "type": "State",
+        "name": "Paraná",
+        "alias": "PR",
+        "country": "Brazil"
+    },
+    {
+        "id": 26,
+        "region": "South",
+        "type": "State",
+        "name": "Rio Grande do Sul",
+        "alias": "RS",
+        "country": "Brazil"
+    },
+    {
+        "id": 27,
+        "region": "South",
+        "type": "State",
+        "name": "Santa Catarina",
+        "alias": "SC",
+        "country": "Brazil"
+    }
+]
