@@ -5,7 +5,22 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<NoWarn>8618</NoWarn>
+
+		<PackageId>AngelStack.DomainDrivenDesign.EntityFrameworkCore</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Gabriel W. Alonso</Authors>
+		<Company>AngelStack</Company>
+		<PackageDescription>Provides entity configurations and extensions for AngelStack.DomainDrivenDesign package.</PackageDescription>
+		<PackageTags>DDD;Utilities;Shared;EF Core;Common</PackageTags>
+		<RepositoryUrl>https://github.com/alonsogabriel/AngelStack.DomainDrivenDesign.EntityFrameworkCore</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>logo.png</PackageIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\logo.png" Pack="true" PackagePath="" />
+		<None Include="..\README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AngelStack.DomainDrivenDesign" Version="1.0.5" />
@@ -18,18 +33,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="Data\Json\brazil-cities.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="Data\Json\brazil-regions.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="Data\Json\brazil-states.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="Data\Json\countries.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
+		<None Update="Data\Json\brazil-cities.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Data\Json\brazil-regions.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Data\Json\brazil-states.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Data\Json\countries.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 </Project>
