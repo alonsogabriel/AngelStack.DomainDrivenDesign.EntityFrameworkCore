@@ -10,19 +10,27 @@ namespace AngelStack.DomainDrivenDesign.EntityFrameworkCore;
 public static class ValueObjectMappings
 {
     public static void MapStringValue<T, K>(this OwnedNavigationBuilder<T, K> builder,
-    bool required = true, int maxLength = int.MaxValue, string? columnName = null)
+    bool required = true, int? maxLength = null, string? columnName = null,
+    Action<PropertyBuilder<string>>? configure = null)
     where T : class
     where K : StringValue
     {
-        builder.Property(s => s.Value)
+        var prop = builder.Property(s => s.Value)
             .IsRequired(required)
-            .HasMaxLength(maxLength)
             .HasColumnName(columnName);
+
+        if (maxLength is not null)
+        {
+            prop.HasMaxLength(maxLength.Value);
+        }
+
+        configure?.Invoke(prop);
     }
 
     public static void MapStringValue<T, K>(
         this EntityTypeBuilder<T> builder, Expression<Func<T, K?>> property,
-        bool required = true, int maxLength = int.MaxValue, string? columnName = null)
+        bool required = true, int? maxLength = null, string? columnName = null,
+        Action<PropertyBuilder<string>>? configure = null)
         where T : class
         where K : StringValue
     {
@@ -31,24 +39,23 @@ public static class ValueObjectMappings
             columnName ??= member.Member.Name;
         }
 
-        builder.OwnsOne(property).MapStringValue(required, maxLength, columnName);
+        builder.OwnsOne(property).MapStringValue(required, maxLength, columnName, configure);
     }
 
-    public static void MapStringValidatable<T, K>(
-        this OwnedNavigationBuilder<T, K> builder,
-        string? columnName = null)
+    public static void MapStringValidatable<T, K>(this OwnedNavigationBuilder<T, K> builder,
+        string? columnName = null, Action<PropertyBuilder<string>>? configure = null)
         where T : class
         where K : StringValidatable
     {
         bool required = StringValidatableExtensions.IsRequired<K>();
         int maxLength = StringValidatableExtensions.GetMaxLength<K>() ?? int.MaxValue;
 
-        builder.MapStringValue(required, maxLength, columnName);
+        builder.MapStringValue(required, maxLength, columnName, configure);
     }
 
     public static void MapStringValidatable<T, K>(
         this EntityTypeBuilder<T> builder, Expression<Func<T, K?>> property,
-        string? columnName = null)
+        string? columnName = null, Action<PropertyBuilder<string>>? configure = null)
         where T : class
         where K : StringValidatable
     {
@@ -57,7 +64,7 @@ public static class ValueObjectMappings
             columnName ??= member.Member.Name;
         }
 
-        builder.OwnsOne(property).MapStringValidatable(columnName);
+        builder.OwnsOne(property).MapStringValidatable(columnName, configure);
     }
 
     public static void MapPhoneNumber<T>(this EntityTypeBuilder<T> builder,
@@ -71,8 +78,6 @@ public static class ValueObjectMappings
             {
                 code.Property(c => c.Value).IsRequired().HasColumnName("PhoneCountryCode");
             });
-
-            phone.OwnsOne(n => n.AreaCode).MapStringValidatable("PhoneAreaCode");
         });
     }
 }
