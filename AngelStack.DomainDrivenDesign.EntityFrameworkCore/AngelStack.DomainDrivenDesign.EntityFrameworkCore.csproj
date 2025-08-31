@@ -7,7 +7,7 @@
 		<NoWarn>8618</NoWarn>
 
 		<PackageId>AngelStack.DomainDrivenDesign.EntityFrameworkCore</PackageId>
-		<Version>1.0.9</Version>
+		<Version>1.1.0</Version>
 		<Authors>Gabriel W. Alonso</Authors>
 		<Company>AngelStack</Company>
 		<PackageDescription>Provides entity configurations and extensions for AngelStack.DomainDrivenDesign package.</PackageDescription>
@@ -18,10 +18,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="Data\Json\*.json"
-				 CopyToOutputDirectory="Always"
-				 Pack="true"
-				 PackagePath="contentFiles\any\any\Data\Json" />
+		<Content Include="Data/Json/*.json" Pack="true" PackagePath="contentFiles/Data/Json" CopyToOutputDirectory="Always" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="AngelStack.DomainDrivenDesign.EntityFrameworkCore.targets" PackagePath="build/AngelStack.DomainDrivenDesign.EntityFrameworkCore.targets" />
 	</ItemGroup>
 
 	<ItemGroup>
