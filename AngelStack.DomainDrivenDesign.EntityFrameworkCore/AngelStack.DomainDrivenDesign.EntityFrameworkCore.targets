@@ -1,8 +1,7 @@
 <Project>
-  <ItemGroup>
-    <Files Include="$(MSBuildThisFileDirectory)/../contentFiles/Data/Json/*.json" />
-  </ItemGroup>
-  <Target Name="CopyFiles" AfterTargets="Build">
-    <Copy SourceFiles="@(Files)" DestinationFolder="$(TargetDir)/Data/Json/%(RecursiveDir)" />
-  </Target>
+	<ItemGroup>
+		<Content Include="$(MSBuildThisFileDirectory)../contentFiles/Data/Json/*.json"
+				 CopyToOutputDirectory="Always"
+				 Link="Data/Json/%(Filename)%(Extension)" />
+	</ItemGroup>
 </Project>
